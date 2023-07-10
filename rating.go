@@ -22,6 +22,14 @@ func main() {
 	rating, _ = reader.ReadString('\n')
 	userrating, _ := strconv.ParseFloat(strings.TrimSpace(rating), 64)
 	//backend
-	fmt.Printf("hello %v, \n thanks for your %v rating,\n\n your rating %v recorded", name, userrating, time.Now().Format(time.Stamp))
+	fmt.Printf("hello %v, \n thanks for your %v rating,\n\n your rating %v recorded \n\n", name, userrating, time.Now().Format(time.Stamp))
+
+	if userrating == 5 {
+		fmt.Println("Good service")
+	} else if userrating == 4 {
+		fmt.Println("Need attention")
+	} else if userrating < 4 {
+		fmt.Println("Bad Service")
+	}
 
 }
